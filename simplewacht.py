@@ -4,6 +4,17 @@ import os
 
 times = datetime.datetime.now()
 
+def create_dir():  # Creamos la capeta para almacenar users
+    path_current = os.path.dirname(__file__)
+    if  os.path.exists(os.path.join(path_current, "Save_User")):
+        print("Existe")
+    else:    
+        os.mkdir(os.path.join(path_current, "Save_User")) # Creamos un directory en donde se encuentra el archivo 
+
+    open(os.path.join(path_current,"Save_User/user_t.txt"), "a").close()
+    open(os.path.join(path_current, "Save_User/passwd_t.txt"), "a").close()
+
+create_dir() 
 root = Tk()
 root.title("Virtual_Test")
 
